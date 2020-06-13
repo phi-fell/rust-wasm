@@ -1,4 +1,4 @@
-const rust = import('./pkg');
+const rust = import('./pkg/graemarch.js');
 
 rust
     .then(m => m.greet())
