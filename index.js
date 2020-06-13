@@ -1,5 +1,8 @@
-const rust = import('./pkg/graemarch.js');
+import init, { greet } from './pkg/graemarch.js';
 
-rust
-    .then(m => m.greet())
-    .catch(console.error);
+async function run() {
+    await init();
+    greet();
+}
+
+run();
