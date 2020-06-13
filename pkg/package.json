@@ -1,0 +1,15 @@
+{
+  "name": "graemarch",
+  "collaborators": [
+    "Phi"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "graemarch_bg.wasm",
+    "graemarch.js",
+    "graemarch.d.ts"
+  ],
+  "module": "graemarch.js",
+  "types": "graemarch.d.ts",
+  "sideEffects": false
+}
