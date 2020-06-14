@@ -47,8 +47,8 @@ function addHeapObject(obj) {
 }
 /**
 */
-export function greet() {
-    wasm.greet();
+export function start() {
+    wasm.start();
 }
 
 function handleError(f) {
