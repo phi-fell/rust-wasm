@@ -1,11 +1,12 @@
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-extern "C" {
-    fn alert(s: &str);
+pub fn greet() {
+    let window = web_sys::window().expect("No global window exists!");
+    let _ = window.alert_with_message(get_str());
+    web_sys::console::log_1(&get_str().into());
 }
 
-#[wasm_bindgen]
-pub fn greet() {
-    alert("Hello there!");
+fn get_str() -> &'static str {
+    return "What's up?";
 }
