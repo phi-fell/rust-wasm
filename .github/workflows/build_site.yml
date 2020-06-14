@@ -16,6 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
     - uses: jetli/wasm-pack-action@v0.3.0
       with:
         version: 'latest'
@@ -24,6 +26,7 @@ jobs:
     - name: Deploy Site
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
         FOLDER: pkg
        
