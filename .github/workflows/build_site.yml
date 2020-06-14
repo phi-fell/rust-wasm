@@ -1,0 +1,28 @@
+name: Rust
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install wasm-pack
+      run: cargo install wasm-pack
+    - name: Build Wasm
+      run: wasm-pack build --target web
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        BRANCH: gh-pages
+        FOLDER: pkg
+       
