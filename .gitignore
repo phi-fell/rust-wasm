@@ -1,4 +1,5 @@
-/target/
+target/
+build/
 Cargo.lock
 **/*.rs.bk
 .vscode/

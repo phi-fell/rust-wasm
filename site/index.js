@@ -1,4 +1,4 @@
-import init, { greet } from './pkg/graemarch.js';
+import init, { greet } from './graemarch.js';
 
 async function run() {
     await init();
