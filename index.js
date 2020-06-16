@@ -1,8 +1,8 @@
-import init, { start } from './graemarch.js';
+import init, { start_game } from './graemarch.js';
 
 async function run() {
     await init();
-    start();
+    start_game();
 }
 
 run();
