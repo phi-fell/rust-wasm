@@ -17,7 +17,7 @@ pub fn start_game() {
 }
 
 fn app_main() -> Result<(), JsValue> {
-    web_sys::console::log_1(&"Starting app...".into());
+    web_sys::console::log_1(&gotg_lib::version::get_full_version_string().into());
     let window = web_sys::window().expect("No global window exists!");
     let document = window.document().expect("No window document exists!");
     let body = document

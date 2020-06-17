@@ -1,3 +1,3 @@
 sh build.sh
-cd server
+cd gotg-server
 cargo run

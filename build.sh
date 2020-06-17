@@ -1,6 +1,6 @@
-cd shared
+cd gotg-lib
 sh build.sh
-cd ../server
+cd ../gotg-server
 sh build.sh
-cd ../client
+cd ../gotg-client
 sh build.sh

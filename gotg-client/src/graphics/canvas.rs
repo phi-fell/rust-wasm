@@ -34,15 +34,15 @@ impl Canvas {
     pub fn set_pos(&self) {
         self.set_style("position:absolute;left:0;top:0;width:100%;height:100%;");
     }
-    fn get_style(&self) -> String {
+    /*fn get_style(&self) -> String {
         self.element.style().css_text()
-    }
+    }*/
     fn set_style(&self, style: &str) {
         self.element.style().set_css_text(style);
     }
-    fn add_style(&self, style: &str) {
+    /*fn add_style(&self, style: &str) {
         self.set_style(&(self.get_style() + style));
-    }
+    }*/
     pub fn resize(&self) {
         let width = self.element.client_width();
         let height = self.element.client_height();
