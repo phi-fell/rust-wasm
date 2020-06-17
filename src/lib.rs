@@ -1,9 +1,19 @@
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
 
+mod graphics;
+
+use graphics::canvas::Canvas;
+
 #[wasm_bindgen]
 pub fn start_game() {
-    app_main().expect("Application Crashed!");
+    match app_main() {
+        Ok(_) => web_sys::console::log_1(&"Application finished running.".into()),
+        Err(error) => {
+            web_sys::console::log_1(&"Application crashed!".into());
+            web_sys::console::log_1(&error);
+        }
+    };
 }
 
 fn app_main() -> Result<(), JsValue> {
@@ -14,11 +24,11 @@ fn app_main() -> Result<(), JsValue> {
         .create_element("body")?
         .dyn_into::<web_sys::HtmlElement>()?;
     document.set_body(Some(&body));
-
-    let val = document.create_element("p")?;
-    val.set_inner_html("Hello from Rust!");
-
-    body.append_child(&val)?;
+    let canvas = Canvas::new(&document)?;
+    canvas.set_pos();
+    body.append_child(&canvas.element)?;
+    canvas.resize();
+    canvas.draw();
 
     Ok(())
 }
