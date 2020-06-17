@@ -1,5 +1,3 @@
-use crate::build_number;
-
 pub fn get_full_version_string() -> String {
     format!("{} {} {}", get_name(), get_stage(), get_version_string())
 }
@@ -13,9 +11,17 @@ pub fn get_stage() -> &'static str {
 }
 
 pub fn get_version_string() -> String {
-    format!("build-{}", get_build())
+    format!("V{}.{}.{}", get_major(), get_minor(), get_patch())
 }
 
-pub fn get_build() -> u32 {
-    build_number::BUILD_NUMBER
+pub fn get_major() -> u32 {
+    0
+}
+
+pub fn get_minor() -> u32 {
+    0
+}
+
+pub fn get_patch() -> u32 {
+    0
 }
