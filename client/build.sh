@@ -1,4 +1,4 @@
 wasm-pack build --target web
 cp -a site/. build
-cp pkg/graemarch.js build/
-cp pkg/graemarch_bg.wasm build/
+cp pkg/gotg_client.js build/
+cp pkg/gotg_client_bg.wasm build/
