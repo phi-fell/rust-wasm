@@ -1,2 +1,2 @@
-awk -F '= ' '/BUILD_NUMBER: u32/{$2=$2+1";"}1' OFS='= ' src/version.rs > src/version_next.rs
-mv src/version_next.rs src/version.rs
+awk -F '= ' '/BUILD_NUMBER: u32/{$2=$2+1";"}1' OFS='= ' src/build_number.rs > src/build_number_next.rs
+mv src/build_number_next.rs src/build_number.rs

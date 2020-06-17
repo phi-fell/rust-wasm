@@ -1,4 +1,4 @@
-const BUILD_NUMBER: u32 = 0;
+use crate::build_number;
 
 pub fn get_full_version_string() -> String {
     format!("{} {} {}", get_name(), get_stage(), get_version_string())
@@ -17,5 +17,5 @@ pub fn get_version_string() -> String {
 }
 
 pub fn get_build() -> u32 {
-    BUILD_NUMBER
+    build_number::BUILD_NUMBER
 }

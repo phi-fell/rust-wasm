@@ -10,10 +10,17 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  build:
-
+  increment-version:
     runs-on: ubuntu-latest
+    steps:
+    - name: Increment Build Number
+      run: |
+      cd gotg-lib
+      sh increment_build_number.sh
 
+  build-site:
+    runs-on: ubuntu-latest
+    needs: increment-version
     steps:
     - uses: actions/checkout@v2
       with:
