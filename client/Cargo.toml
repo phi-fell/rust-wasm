@@ -1,5 +1,5 @@
 [package]
-name = "graemarch"
+name = "gotg-client"
 version = "0.1.0"
 authors = ["Phi"]
 edition = "2018"
@@ -24,3 +24,6 @@ features = [
   'console',
   'Performance',
 ]
+
+[build-dependencies]
+wasm-pack = "0.9.1"
